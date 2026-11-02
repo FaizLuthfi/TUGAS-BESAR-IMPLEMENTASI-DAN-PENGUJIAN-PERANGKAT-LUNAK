@@ -217,7 +217,7 @@ def update_password(user_id):
     return ok(message="Password berhasil diperbarui.")
 
 
-# ================================================================ UC #8 — Update profile image
+#UC #8 — Update profile image
 @app.put("/api/users/<int:user_id>/profile-image")
 def update_profile_image(user_id):
     body, e = json_body()
@@ -246,8 +246,7 @@ def get_user(user_id):
     return ok({"user": user})
 
 
-# ================================================================ register business routes
-# Import di bawah supaya routes.py bisa import dari app.py tanpa circular import
+#register business routes
 from routes import bp  # noqa: E402
 app.register_blueprint(bp)
 

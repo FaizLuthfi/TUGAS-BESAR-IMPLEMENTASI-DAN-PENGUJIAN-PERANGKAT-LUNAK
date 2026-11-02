@@ -14,7 +14,7 @@ from app import get_conn, ok, err, json_body
 
 bp = Blueprint("routes", __name__)
 
-# ================================================================ constants
+# constants
 STATUSES       = ("MENUNGGU", "DITERIMA", "DIPROSES", "DIKIRIM", "SELESAI", "DIBATALKAN")
 FINAL_STATUSES = ("SELESAI", "DIBATALKAN")
 TRANSITIONS    = {
@@ -29,7 +29,7 @@ PAYMENT_METHODS  = ("QRIS", "CASH")
 MAX_QTY_PER_ITEM = 99
 
 
-# ================================================================ order helpers
+# order helpers
 def fetch_order(cur, order_id, customer_id=None):
     """Detail order lengkap. Jika customer_id diisi, order milik orang lain -> None."""
     cur.execute(
@@ -108,7 +108,7 @@ def change_status(cur, order_id, new_status, employee_id, invalid_msg=None):
     return None  # None = tidak ada error
 
 
-# ================================================================ UC #0 — Lihat daftar menu (publik)
+# UC #0 — Lihat daftar menu (publik)
 @bp.get("/api/menu")
 def list_menu():
     with get_conn().cursor() as cur:
@@ -121,7 +121,7 @@ def list_menu():
     return jsonify(items)
 
 
-# ================================================================ UC #1 — Customer: Memesan makanan
+# UC #1 — Customer: Memesan makanan
 @bp.post("/api/orders")
 def create_order():
     body, e = json_body()
@@ -210,7 +210,7 @@ def create_order():
     return ok({"order": order}, message="Pesanan berhasil dibuat."), 201
 
 
-# ================================================================ UC #2 — Customer: Melihat status pesanan
+# UC #2 — Customer: Melihat status pesanan
 @bp.get("/api/orders")
 def list_my_orders():
     """?customer_id=<id>&active=true"""
@@ -249,7 +249,7 @@ def get_my_order(order_id):
     return ok({"order": order})
 
 
-# ================================================================ UC #9 — Pegawai: Menerima pesanan
+#UC #9 — Pegawai: Menerima pesanan
 @bp.get("/api/employee/orders")
 def list_orders():
     """?status=MENUNGGU (default) | DIPROSES | ALL"""
@@ -304,7 +304,7 @@ def accept_order(order_id):
     return ok({"order": order}, message="Pesanan diterima.")
 
 
-# ================================================================ UC #10 — Pegawai: Mengubah status pesanan
+#   UC #10 — Pegawai: Mengubah status pesanan
 @bp.patch("/api/employee/orders/<int:order_id>/status")
 def update_status(order_id):
     body, e = json_body()
