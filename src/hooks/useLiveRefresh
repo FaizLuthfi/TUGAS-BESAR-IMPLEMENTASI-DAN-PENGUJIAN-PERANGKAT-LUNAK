@@ -1,0 +1,20 @@
+// src/hooks/useLiveRefresh.js
+import { useEffect, useRef } from "react";
+
+export function useLiveRefresh(reload, intervalMs = 5000) {
+  const ref = useRef(reload);
+  ref.current = reload;
+
+  useEffect(() => {
+    const tick = () => {
+      if (document.visibilityState === "visible") ref.current(true);
+    };
+    const id = setInterval(tick, intervalMs);
+    const onStorage = () => ref.current(true);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      clearInterval(id);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, [intervalMs]);
+}

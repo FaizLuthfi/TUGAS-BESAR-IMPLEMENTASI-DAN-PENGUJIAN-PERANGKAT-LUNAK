@@ -3,7 +3,7 @@ import { createContext, useCallback, useEffect, useMemo, useState } from "react"
 import { authService } from "../services/authService";
 import { resetService } from "../services/resetService";
 import { ensureSeeded } from "../services/storage";
-import { ROLES } from "../models/constants";
+import { ROLES } from "../models/constant";
 
 export const AuthContext = createContext(null);
 

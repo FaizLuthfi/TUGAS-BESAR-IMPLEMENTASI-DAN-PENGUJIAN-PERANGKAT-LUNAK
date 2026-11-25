@@ -1,5 +1,6 @@
 // src/services/authService.js
-import { STORAGE_KEYS, ROLES } from "../models/constants";
+import { STORAGE_KEYS } from "../models/constant";
+import { ROLES } from "../models/constant";
 import { createCustomer } from "../models/RegisteredCustomer";
 import { readJSON, writeJSON, removeKey, genId } from "./storage";
 import { mockRequest, ApiError } from "./network";

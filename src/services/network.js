@@ -1,6 +1,6 @@
 // src/services/network.js
-import { STORAGE_KEYS } from "../models/constants";
 import { readJSON, writeJSON } from "./storage";
+import { STORAGE_KEYS } from "../models/constant";
 
 export const isNetworkFailing = () => readJSON(STORAGE_KEYS.network, false) === true;
 

@@ -1,6 +1,7 @@
 // src/context/CartContext.jsx
 import { createContext, useCallback, useEffect, useMemo, useState } from "react";
-import { STORAGE_KEYS, PAYMENT_METHOD } from "../models/constants";
+import { STORAGE_KEYS } from "../models/constant";
+import { PAYMENT_METHOD } from "../models/constant";
 import { calculateSubTotal } from "../models/OrderItem";
 import { readJSON, writeJSON } from "../services/storage";
 import { orderService } from "../services/orderService";

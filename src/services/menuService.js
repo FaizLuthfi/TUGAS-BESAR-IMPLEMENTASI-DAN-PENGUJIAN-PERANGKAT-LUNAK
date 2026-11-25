@@ -1,8 +1,8 @@
 // src/services/menuService.js
-import { STORAGE_KEYS } from "../models/constants";
 import { createMenuItem } from "../models/MenuItem";
 import { readJSON, writeJSON, genId } from "./storage";
 import { mockRequest, ApiError } from "./network";
+import { STORAGE_KEYS } from "../models/constant";
 
 export const menuService = {
   getAll() {

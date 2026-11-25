@@ -8,7 +8,8 @@ import { createOrderStatus } from "./OrderStatus";
 import { createPayment } from "./Payment";
 import { createOrder } from "./Order";
 import { createFeedback } from "./Feedback";
-import { ORDER_STATUS, PAYMENT_METHOD } from "./constants";
+import { ORDER_STATUS } from "./constant";
+import { PAYMENT_METHOD } from "./constant";
 
 const daysAgo = (d) => new Date(Date.now() - d * 86400000).toISOString();
 

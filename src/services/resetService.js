@@ -1,7 +1,6 @@
 // src/services/resetService.js
 import { seedAll, removeKey } from "./storage";
-import { STORAGE_KEYS } from "../models/constants";
-
+import { STORAGE_KEYS } from "../models/constant";
 export const resetService = {
   resetToSeed() {
     removeKey(STORAGE_KEYS.session);

@@ -1,12 +1,10 @@
 // src/services/orderService.js
-import {
-    STORAGE_KEYS,
-    ORDER_STATUS,
-    ORDER_STATUS_FLOW,
-    ACTIVE_STATUSES,
-    NOTIF_TARGET,
-    PAYMENT_METHOD,
-  } from "../models/constants";
+  import { STORAGE_KEYS } from "../models/constant";
+  import { ORDER_STATUS } from "../models/constant";
+  import { ORDER_STATUS_FLOW } from "../models/constant";
+  import { ACTIVE_STATUSES } from "../models/constant";
+  import { NOTIF_TARGET } from "../models/constant";
+  import { PAYMENT_METHOD } from "../models/constant";
   import { createOrder } from "../models/Order";
   import { createOrderItem } from "../models/OrderItem";
   import { createOrderStatus } from "../models/OrderStatus";

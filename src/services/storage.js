@@ -1,5 +1,5 @@
 // src/services/storage.js
-import { STORAGE_KEYS } from "../models/constants";
+import { STORAGE_KEYS } from "../models/constant";
 import {
   seedEmployees,
   seedCustomers,

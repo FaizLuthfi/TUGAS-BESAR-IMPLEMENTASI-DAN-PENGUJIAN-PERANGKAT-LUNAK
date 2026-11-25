@@ -7,7 +7,8 @@ import {
     useRef,
     useState,
   } from "react";
-  import { STORAGE_KEYS, NOTIF_TARGET } from "../models/constants";
+  import { STORAGE_KEYS } from "../models/constant";
+  import { NOTIF_TARGET } from "../models/constant";
   import { notificationService } from "../services/notificationService";
   import { useAuth } from "../hooks/useAuth";
   

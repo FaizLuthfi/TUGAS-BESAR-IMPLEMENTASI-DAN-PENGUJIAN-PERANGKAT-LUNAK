@@ -1,5 +1,6 @@
 // src/models/Payment.js
-import { PAYMENT_METHOD, PAYMENT_STATUS } from "./constants";
+import { PAYMENT_METHOD } from "./constant";
+import { PAYMENT_STATUS } from "./constant";
 
 export function createPayment({
   paymentId,

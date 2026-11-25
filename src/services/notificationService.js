@@ -1,5 +1,5 @@
 // src/services/notificationService.js
-import { STORAGE_KEYS } from "../models/constants";
+import { STORAGE_KEYS } from "../models/constant";
 import { readJSON, writeJSON, genId } from "./storage";
 
 export const notificationService = {
